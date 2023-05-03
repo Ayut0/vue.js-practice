@@ -80,9 +80,13 @@ const user = {
   <!-- To show the index of the array, use the second argument of the v-for -->
   <h3>v-for:array and V-for:object</h3>
   <div v-for="user in users" :key="user.id">
-    <div v-for="(value, name) in user" :key="value">
-      {{ name }}:{{ value }}
-    </div>
+    <div v-for="(value, name) in user" :key="value">{{ name }}:{{ value }}</div>
+  </div>
+
+  <!-- create a conditional branch by v-if -->
+  <h3>COnditional branch v-for and v-if</h3>
+  <div v-for="user in users" :key="user.id">
+    <div v-if="!user.admin">{{ user.name }}</div>
   </div>
 </template>
 
